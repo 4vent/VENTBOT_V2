@@ -1,9 +1,39 @@
 {
     "novels": [
         {
-            "title": "小国の侯爵令嬢は敵国にて覚醒する",
-            "general_all_no": 60,
-            "ncode": "n0264hi",
+            "title": "フェイクスナッフ",
+            "general_all_no": 10,
+            "ncode": "n9568gf",
+            "isR18": true
+        },
+        {
+            "title": "美少女ゾンビ嫁コレクション",
+            "general_all_no": 40,
+            "ncode": "n8456gx",
+            "isR18": true
+        },
+        {
+            "title": "D4C 放課後デスゲーム",
+            "general_all_no": 63,
+            "ncode": "n2276hf",
+            "isR18": true
+        },
+        {
+            "title": "ゾンビ王国を作ってみた件",
+            "general_all_no": 15,
+            "ncode": "n6673hc",
+            "isR18": true
+        },
+        {
+            "title": "死姦学校",
+            "general_all_no": 2,
+            "ncode": "n5575hg",
+            "isR18": true
+        },
+        {
+            "title": "メイドなら当然です。　～　地味仕事をすべて引き受けていた万能メイドさん、濡れ衣を着せられたので旅に出ることにしました。",
+            "general_all_no": 39,
+            "ncode": "n6251hf",
             "isR18": false
         }
     ]
