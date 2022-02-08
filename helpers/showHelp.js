@@ -15,4 +15,13 @@ function showGeneralHelp(args, event){
     sendMessage(event.replyToken, message.join(""))
 }
 
+function showCmdNotFound(args, event){
+    const message = [
+        "コマンドが見つかりません。\n",
+        "!h でヘルプを表示できます。",
+    ]
+    sendMessage(event.replyToken, message.join(""))
+}
+
 exports.showGeneralHelp = showGeneralHelp
+exports.showCmdNotFound = showCmdNotFound

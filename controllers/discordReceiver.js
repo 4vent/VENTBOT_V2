@@ -11,7 +11,7 @@ const { identifyLineWebhookType } = require('./lineReceiver');
 
 async function startDiscord(DISCORD_TOKEN=process.env.DISCORD_TOKEN){
     client.once('ready', () => {
-        console.log('Discord is Ready...');
+        logger.info('Discord is Ready...');
     });
 
     client.on('messageCreate', messageCrate => {
@@ -38,7 +38,7 @@ function identifyMessageSource(messageCrate){
     }
 }
 
-startDiscord();
+exports.startDiscord = startDiscord;
 
 // async function main() {
 //     const dcClient = await startDiscord();

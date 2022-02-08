@@ -3,6 +3,7 @@ log/
 Git_Page/
 playground/
 
+/.env
 playground.js
 playground.json
 tempCodeRunnerFile.js

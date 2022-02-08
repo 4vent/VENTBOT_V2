@@ -1,5 +1,40 @@
 {
+    "$function": "showCmdNotFound",
+    "$source": "../helpers/showHelp",
+    "$permission": "any",
     "!h": {
-        "function": "showGeneralHeelp"
+        "$function": "showGeneralHelp",
+        "$source": "../helpers/showHelp",
+        "$permission": "any"
+    },
+    "!n": {
+        "$function": "showNarouHelp",
+        "$source": "../controllers/narouUpdateChecker",
+        "$permission": "narou",
+        "reg": {
+            "$function": "regNovel",
+            "$source": "../controllers/narouUpdateChecker",
+            "$permission": "narou"
+        },
+        "list": {
+            "$function": "listNovels",
+            "$source": "../controllers/narouUpdateChecker",
+            "$permission": "narou"
+        },
+        "edit": {
+            "$function": "editNovel",
+            "$source": "../controllers/narouUpdateChecker",
+            "$permission": "narou"
+        },
+        "del": {
+            "$function": "delNovel",
+            "$source": "../controllers/narouUpdateChecker",
+            "$permission": "narou"
+        },
+        "fu": {
+            "$function": "checkUpdate",
+            "$source": "../controllers/narouUpdateChecker",
+            "$permission": "narou"
+        }
     }
 }

@@ -24,9 +24,23 @@
             "type": "dateFile",
             "filename": "log/vents_linebot.log",
             "layout": {"type": "pattern", "pattern": "[%d] [%p] %f{1} - %m"}
+        },
+        "line": {
+            "type": "logLevelFilter",
+            "appender": "line_send",
+            "level": "warn"
+        },
+        "line_send": {
+            "type": "customLog4jsAppenders/line",
+            "userid": "U36d6b40011b9f88acd6c3cde20176c98",
+            "layout": {"type": "pattern", "pattern": "[%d] [%p] %f{1} - %m"}
         }
     },
     "categories": {
-        "default": { "appenders": ["console", "info", "trace"], "level": "all", "enableCallStack": true }
+        "default": {
+            "appenders": ["console", "info", "trace", "line"],
+            "level": "all",
+            "enableCallStack": true 
+        }
     }
 }
