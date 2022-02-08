@@ -219,6 +219,8 @@ async function checkUpdate() {
     const groupeslist = JSON.parse(fs.readFileSync('./json/line_groupeid_list.json', 'utf-8'));
     const narou_groupeID = groupeslist.groupeslist.narou_notification;
 
+    sendMessage(narou_groupeID, '強制更新中...');
+
     novelsList.novels.forEach(async n => {
         const narouApiPath = (n.isR18)? "/novel18api/api/": "/novelapi/api/";
         const options = {
@@ -236,7 +238,9 @@ async function checkUpdate() {
                 res.on('end', () => {
                     const rawJson = Buffer.concat(data);
                     const parsedJson = JSON.parse(rawJson)
-                    if(parsedJson[1].general_all_no > n.general_all_no) {
+                    if(parsedJson[0].allcount == 0){
+                        resolve();
+                    }else if(parsedJson[1].general_all_no > n.general_all_no) {
                         const url = `https://${(n.isR18)? 'novel18': 'ncode'}.syosetu.com/${n.ncode}/${n.general_all_no + 1}/`;
                         const message = {
                             type: "flex",
@@ -253,10 +257,11 @@ async function checkUpdate() {
                             if(n2.ncode === n.ncode) n2.general_all_no = parsedJson[1].general_all_no;
                         })
                         fs.writeFileSync('./json/narou_checklist.json', JSON.stringify(processNovelsList, null, '    '))
+                        resolve();
                     }
-                    resolve();
                 })
             })
         })
     });
+    sendMessage(narou_groupeID, '更新完了')
 }
